@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Callstats.io docs</title>
+    <!-- needed for adaptive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+    <!-- <link rel="stylesheet" href="/static/site.css" /> -->
+
+    <!-- Bootstrap -->
+    <link href="//www.callstats.io/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">    <!-- Custom styles for this template -->
+    <link href="//www.callstats.io/static/bootstrap/css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="//www.callstats.io/static/bootstrap/css/pygments.css" rel="stylesheet">
+    <link href="//www.callstats.io/static/bootstrap/css/jumbotron-landing.css" rel="stylesheet">
+    <link href="//www.callstats.io/static/bootstrap/css/www-2016.css" rel="stylesheet" >
+    <!-- <link href="//www.callstats.io/static/bootstrap/css/jumbotron-landing.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="//www.callstats.io/static/favicon.ico" type="image/x-icon" />
+
+    <script src="https://rebilly.github.io/ReDoc/releases/latest/redoc.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//www.callstats.io/static/bootstrap/js/bootstrap.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-default navbar-static-top bs-docs-nav" id="top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+           <a href="/" class="navbar-brand"><img src="//www.callstats.io/static/images/logo-default.png"></a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://dashboard.callstats.io/pricing">Pricing</a></li>
+              <li><a href="https://docs.callstats.io/" onclick="docsFrom('rest-api-v1.0.0.json'); return false;">API docs</a></li>
+              <li><a href="https://callstats-io.zendesk.com/hc/">Help</a></li>
+              <li><a href="https://www.callstats.io/blog">Blog</a></li>
+              <li><a href="https://calendly.com/binoy/30min" class="btn btn-success round raised">Request a Demo</a></li>
+              <li><a href="https://dashboard.callstats.io/">Log in</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <redoc></redoc>
+
+    <script>
+      function docsFrom(file) {
+        Redoc.init(file, {});
+      }
+
+      $(function() {
+        docsFrom('rest-api-v1.0.0.json');
+      });
+    </script>
+  </body>
+</html>

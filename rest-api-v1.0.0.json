@@ -1,0 +1,668 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "callstats REST API",
+        "description": "Monitor your app with the callstats API",
+        "version": "1.0.0"
+    },
+    "host": "api.callstats.io",
+    "schemes": [
+        "https"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/auth": {
+            "post": {
+                "summary": "Authentication",
+                "parameters": [
+                    {
+                        "name": "appId",
+                        "in": "query",
+                        "description": "Application ID is obtained from callstats.io",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "localUserId",
+                        "in": "query",
+                        "description": "user ID MUST NOT be null or empty.",
+                        "required": true,
+                        "type": "number",
+                        "format": "int"
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "jwt token",
+                        "required": true,
+                        "type": "number",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Authentication"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "session token",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/apps/{appID}/conferences/{userID}/{confID}": {
+            "post": {
+                "summary": "Conference creation",
+                "description": "Create the conference by giving the parameters required to obtain the UCID.\n",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "appID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "userID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "body params",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ConfParams"
+                        }
+                    }
+                ],
+                "tags": [
+                    "Conference"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "UCID",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/apps/{appID}/conferences/{userID}/{confID}/{ucID}": {
+            "get": {
+                "summary": "Conference status",
+                "description": "Get the conference status based on its UCID\n",
+                "parameters": [
+                    {
+                        "name": "appID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "userID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ucID",
+                        "in": "path",
+                        "description": "ucID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Conference"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conference state",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/apps/{appID}/conferences/{userID}/{confID}/{ucID}/user": {
+            "post": {
+                "summary": "Submiting Conference events",
+                "description": "Submiting userJoined Event\n",
+                "parameters": [
+                    {
+                        "name": "appID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "userID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ucID",
+                        "in": "path",
+                        "description": "ucID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Conference"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conference state",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Submiting Conference events",
+                "description": "UserLeft Event\n",
+                "parameters": [
+                    {
+                        "name": "appID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "userID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ucID",
+                        "in": "path",
+                        "description": "ucID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Conference"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conference state",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/apps/{appID}/conferences/{userID}/{confID}/{ucID}/userMediaEvents": {
+            "post": {
+                "summary": "Submiting Conference events",
+                "description": "Submiting Conference events, based on the UCID\n",
+                "parameters": [
+                    {
+                        "name": "appID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "userID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ucID",
+                        "in": "path",
+                        "description": "ucID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Conference"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conference state",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/apps/{appID}/conferences/{userID}/{confID}/{ucID}/networkEvents": {
+            "post": {
+                "summary": "Submiting Conference events",
+                "description": "Submiting Conference events, based on the UCID\n",
+                "parameters": [
+                    {
+                        "name": "appID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "userID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ucID",
+                        "in": "path",
+                        "description": "ucID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Conference"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conference state",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/apps/{appID}/conferences/{userID}/{confID}/{ucID}/stats": {
+            "post": {
+                "summary": "Submiting Conference stats",
+                "description": "Submiting Conference stats for a conference as per its UCID\n",
+                "parameters": [
+                    {
+                        "name": "appID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "userID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ucID",
+                        "in": "path",
+                        "description": "ucID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Conference"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conference state",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/apps/{appID}/conferences/{userID}/{confID}/{ucID}/userFeedback": {
+            "post": {
+                "summary": "Submiting Conference user feedback",
+                "description": "Submiting user feedback for a conference based on its UCID\n",
+                "parameters": [
+                    {
+                        "name": "appID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "userID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ucID",
+                        "in": "path",
+                        "description": "ucID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Conference"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conference state",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/apps/{appID}/conferences/{userID}/{confID}/{ucID}/refreshPresence": {
+            "post": {
+                "summary": "Submiting Conference refresh presence",
+                "description": "This event records the presence of particiapnts in a confernce, max interval 30s.\n",
+                "parameters": [
+                    {
+                        "name": "appID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "userID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ucID",
+                        "in": "path",
+                        "description": "ucID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Conference"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conference state",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/apps/{appID}/conferences/{userID}/{confID}/{ucID}/sdp": {
+            "post": {
+                "summary": "Submiting Conference SDP",
+                "description": "Submiting SDP for a pc in conference\n",
+                "parameters": [
+                    {
+                        "name": "appID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "userID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ucID",
+                        "in": "path",
+                        "description": "ucID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Conference"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conference state",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/apps/{appID}/conferences/{userID}/{confID}/{ucID}/systemStatus": {
+            "post": {
+                "summary": "Submiting System status for a conference",
+                "description": "Submiting System status informationfor a conference such as battery level, cpu , etc.\n",
+                "parameters": [
+                    {
+                        "name": "appID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "userID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "confID",
+                        "in": "path",
+                        "description": "body params",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "ucID",
+                        "in": "path",
+                        "description": "ucID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Conference"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Conference state",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ConfParams": {
+            "type": "object",
+            "properties": {
+                "appID": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "confID": {
+                    "type": "string"
+                },
+                "localUserID": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
