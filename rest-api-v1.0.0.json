@@ -175,7 +175,7 @@
         "/apps/{appID}/conferences/{userID}/{confID}/{ucID}/user": {
             "post": {
                 "summary": "Submiting Conference events",
-                "description": "Submiting userJoined Event\n",
+                "description": "Submiting userJoined Event<br /><div class=\"thumbnail\"><img src=\"images/Authentication-userJoined-MessageFlowRESTAPI.jpg\" /><div class=\"caption\">Flow diagram</div></div>",
                 "parameters": [
                     {
                         "name": "appID",
