@@ -3,22 +3,22 @@
     "info": {
         "title": "callstats REST API",
         "description": "
-        Monitor your web-rtc app with the callstats API\n
+        Monitor any real-time app with the callstats API\n
         # Steps to integrate\n
-        All the messages between the webRTC endpoint and the REST API during the call are shown in the following figures, represented as sequence diagrams.\n 
+        All the messages between the WebRTC endpoint and the REST API during the call are shown in the following figures, represented as sequence diagrams.\n 
         ## Step 1\n
         At the beginning of the call, the service needs to be authenticated. When the authentication succeeds, a Token is sent back to the WebRTC endpoint. The received token is then used for sending events and stats.\n
-        <img src='images/Authentication-userJoined-MessageFlowRESTAPI.png' />\n
+        <img src='images/step1-MessageFlowRESTAPI.png' />\n
         After the authentication process is completed, the endpoint initiates the monitoring process by a sending userJoined event along with the newly acquired Token. In case of success the response contains ucID. By acquiring ucID and Token the endpoint allowed to send events and stats.\n
         ## Step 2\n
         Throughout the duration of the call the WebRTC endpoint is obligated to send userAlive event in every 10 seconds. For initiating the call the endpoint requires to send fabricSetup event.\n
-        <img src='images/userAlive-fabricSetup-MessageFlowRESTAPI.png' />\n
+        <img src='images/step2-MessageFlowRESTAPI.png' />\n
         ## Step 3\n
         WebRTC endpoint can now send stats to REST API regularly and  all the stats messages are acknowledged.\n
-        <img src='images/statsMessage-Flow-REST-API.png' />\n
+        <img src='images/step3-MessageFlowRESTAPI.png' />\n
         ## Step 4\n
         The WebRTC endpoint informs the REST API about the end of the call by sending fabricTermination event. After the event is acknowledged, the endpoint sends the userLeft event, which removes the user from the conference. Once the last participant sends the userLeft event,  the conference is terminated.\n
-        <img src='images/endConferenceMessageFlowRESTAPI.png' />\n
+        <img src='images/step4-MessageFlowRESTAPI.png' />\n
 
         ",
         "version": "1.0.0"
@@ -352,7 +352,7 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/devices/list": {
             "post": {
                 "summary": "Submitting connected/active devices",
-                "description": "Information about the connected and/or active media devices.\nAvailable eventTypes are given below:\n   - connectedDeviceList (All the media devices connected to the end-point) \n   - activeDeviceList (Active media devices used by the end-point) \n",
+                "description": "Information about the connected and/or active media devices.\nAvailable eventTypes are given below:\n   - connectedDeviceList (All the media devices connected to the endpoint) \n   - activeDeviceList (Active media devices used by the endpoint) \n",
                 "parameters": [
                     {
                         "name": "token",
@@ -526,7 +526,7 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/media/pipeline": {
             "post": {
                 "summary": "Submitting Media pipeline events",
-                "description": "When the media starts to render, or suspended or stalled in the end-point then these events should be sent.\n  - mediaPlaybackStarted (media is available at the end-point)\n  - mediaPlaybackSuspended (media is suspeneded at the end-point)\n  - mediaPlaybackStalled (media is stalled at the end-point)\n",
+                "description": "When the media starts to render, or suspended or stalled in the endpoint then these events should be sent.\n  - mediaPlaybackStarted (media is available at the endpoint)\n  - mediaPlaybackSuspended (media is suspeneded at the endpoint)\n  - mediaPlaybackStalled (media is stalled at the endpoint)\n",
                 "parameters": [
                     {
                         "name": "token",
