@@ -7,9 +7,9 @@
         # Steps to integrate\n
         All the messages between the WebRTC endpoint and the REST API during the call are shown in the following figures, represented as sequence diagrams.\n 
         ## Step 1\n
-        At the beginning of the call, the service needs to be authenticated. When the authentication succeeds, a Token is sent back to the WebRTC endpoint. The received token is then used for sending events and stats.\n
+        At the beginning of the call, the service needs to be authenticated. When the authentication succeeds, a 'token' is sent back to the WebRTC endpoint. The received 'token' is then used for sending events and stats.\n
         <img src='images/step1-MessageFlowRESTAPI.png' />\n
-        After the authentication process is completed, the endpoint initiates the monitoring process by a sending userJoined event along with the newly acquired Token. In case of success the response contains ucID. By acquiring ucID and Token the endpoint allowed to send events and stats.\n
+        After the authentication process is completed, the endpoint initiates the monitoring process by a sending userJoined event along with the newly acquired 'token'. In case of success the response contains ucID. By acquiring ucID and 'token' the endpoint allowed to send events and stats.\n
         ## Step 2\n
         Throughout the duration of the call the WebRTC endpoint is obligated to send userAlive event in every 10 seconds. For initiating the call the endpoint requires to send fabricSetup event.\n
         <img src='images/step2-MessageFlowRESTAPI.png' />\n
