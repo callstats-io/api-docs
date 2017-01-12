@@ -2328,6 +2328,16 @@
         },
         "ssrcInfoObj": {
             "type": "object",
+            "required": [
+                "ssrc",
+                "cname",
+                "streamType",
+                "userID",
+                "msid",
+                "mslabel",
+                "label",
+                "localStartTime"
+            ],
             "properties": {
                 "ssrc": {
                     "type": "string"
