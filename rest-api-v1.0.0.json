@@ -1753,7 +1753,8 @@
                     "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "mediaDeviceID": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"It is obtained from mediaDevices.enumerateDevices() API or similar API in native clients (e.g. https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/enumerateDevices)"
                 },
                 "eventType": {
                     "type": "string",
@@ -1768,8 +1769,9 @@
                 },
                 "remoteIDList": {
                     "type": "array",
+                    "description" : "List of targeted endpoint IDs",
                     "items": {
-                        "type": "string"
+                        "type": "string",
                     }
                 }
             }
@@ -1836,7 +1838,8 @@
                     "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "ssrc": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Synchronization source, a 32 bit identifier in the RTP header (https://www.ietf.org/rfc/rfc3550.txt)"
                 },
                 "eventType": {
                     "type": "string",
@@ -2121,16 +2124,23 @@
             ],
             "properties": {
                 "mediaDeviceID": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"It is obtained from mediaDevices.enumerateDevices() API or similar API in native clients (e.g. https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/enumerateDevices)"
                 },
                 "kind": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [   "audioinput",
+                                "audiooutput",
+                                 "videoinput"
+                            ]
                 },
                 "label": {
-                    "type": "string"
+                    "type": "string",
+                    "description" : "Input device name (example: external USB Webcam)"
                 },
                 "groupID": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Group identifier of the device (note: two devices belong to the same group identifier only if they belong to the same physical device)"
                 }
             }
         },
