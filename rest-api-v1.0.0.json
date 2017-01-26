@@ -1539,7 +1539,7 @@
                 },
                 "buildName": {
                     "type": "string",
-                    "description":"Name of the platform that runs the application (example: Chrome or FireFox or Edge or Safari or WebView or plugin or Electron or node-webkit(https://github.com/nwjs/nw.js/wiki))"
+                    "description":"Name of the platform that runs the application (example: Chrome or FireFox or Edge or Safari or WebView (https://developer.chrome.com/multidevice/webview/overview) or plugin or Electron or node-webkit(https://github.com/nwjs/nw.js/wiki))"
                 },
                 "buildVersion": {
                     "type": "string",
