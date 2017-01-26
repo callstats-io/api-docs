@@ -1516,24 +1516,38 @@
     "definitions": {
         "endpointInfo": {
             "type": "object",
+            "required": [
+                "type"
+            ],
             "properties": {
                 "type": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "browser",
+                        "native",
+                        "plugin",
+                        "middlebox"
+                    ]  
                 },
                 "os": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Operating System name"
                 },
                 "osVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Operating System version"
                 },
-                "name": {
-                    "type": "string"
+                "buildName": {
+                    "type": "string",
+                    "description":"Name of the engine that runs the application (example: Chrome or FF or Edge or Safari or WebView or plugin or Electron or node-webkit)"
                 },
-                "version": {
-                    "type": "string"
+                "buildVersion": {
+                    "type": "string",
+                    "description":"Version associated to the Engine."
                 },
                 "appVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Version of the application "
                 }
             }
         },
@@ -1546,14 +1560,18 @@
             ],
             "properties": {
                 "localID": {
-                    "type": "string"
+                    "type": "string",
+                    "maxLength": "128",
+                    "description": "It is provided by the developer and MUST NOT be null or empty."
                    
                 },
                 "deviceID": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 }
             }
         },
@@ -1576,7 +1594,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "endpointInfo": {
                     "$ref": "#/definitions/endpointInfo"
@@ -1730,7 +1749,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "mediaDeviceID": {
                     "type": "string"
@@ -1774,7 +1794,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "mediaDeviceList": {
                     "type": "array",
@@ -1811,7 +1832,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "ssrc": {
                     "type": "string"
@@ -1847,7 +1869,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "remoteID": {
                     "type": "string",
@@ -1917,7 +1940,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 }
             }
         },
@@ -1940,7 +1964,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "remoteID": {
                     "type": "string",
@@ -1983,7 +2008,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "statusStats": {
                     "type": "object",
@@ -2031,7 +2057,8 @@
                     "type": "string"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "remoteID": {
                     "type": "string",
@@ -2130,7 +2157,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "remoteID": {
                     "type": "string",
@@ -2175,7 +2203,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "connectionID": {
                     "type": "string"
@@ -2214,7 +2243,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "remoteID": {
                     "type": "string",
@@ -2263,7 +2293,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "connectionID": {
                     "type": "string"
@@ -2370,7 +2401,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "timestamp": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "remoteID": {
                     "type": "string",
