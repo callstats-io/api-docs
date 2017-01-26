@@ -1539,15 +1539,15 @@
                 },
                 "buildName": {
                     "type": "string",
-                    "description":"Name of the engine that runs the application (example: Chrome or FF or Edge or Safari or WebView or plugin or Electron or node-webkit)"
+                    "description":"Name of the platform that runs the application (example: Chrome or FireFox or Edge or Safari or WebView or plugin or Electron or node-webkit(https://github.com/nwjs/nw.js/wiki))"
                 },
                 "buildVersion": {
                     "type": "string",
-                    "description":"Version associated to the Engine."
+                    "description":"Version associated with the platform"
                 },
                 "appVersion": {
                     "type": "string",
-                    "description":"Version of the application "
+                    "description":"Version of your application "
                 }
             }
         },
