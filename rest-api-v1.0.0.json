@@ -1883,7 +1883,8 @@
                     "type": "number"
                 },
                 "connectionID": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
                 },
                 "iceGatheringDelay": {
                     "type": "number"
@@ -1954,7 +1955,8 @@
                 "localID",
                 "deviceID",
                 "timestamp",
-                "remoteID"
+                "remoteID",
+                "feedback"
             ],
             "properties": {
                 "localID": {
@@ -1976,18 +1978,25 @@
                 },
                 "feedback": {
                     "type": "object",
+                    "required": [
+                        "overallRating"
+                    ],
                     "properties": {
                         "overallRating": {
-                            "type": "integer"
+                            "type": "integer",
+                            "description": "Rating from 1 to 5 (MOS score)"
                         },
                         "videoQualityRating": {
-                            "type": "integer"
+                            "type": "integer",
+                            "description": "Rating from 1 to 5"
                         },
                         "audioQualityRating": {
-                            "type": "integer"
+                            "type": "integer",
+                            "description": "Rating from 1 to 5"
                         },
                         "comments": {
-                            "type": "string"
+                            "type": "string",
+                            "description": "participant comments"
                         }
                     }
                 }
@@ -2057,7 +2066,8 @@
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
                 },
                 "connectionID": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
                 },
                 "timestamp": {
                     "type": "number",
@@ -2065,7 +2075,8 @@
                 },
                 "remoteID": {
                     "type": "string",
-                    "maxLength": "128"
+                    "maxLength": "128",
+                    "description": "It is provided by the developer and MUST NOT be null or empty."
                 },
                 "stats": {
                     "type": "object",
@@ -2076,42 +2087,54 @@
                     "properties": {
                         "tracks": {
                             "type": "array",
+                            "enum":[   "inboundrtp",
+                                       "outboundrtp",
+                                       "inbound-rtp",
+                                       "outbound-rtp",
+                                       "ssrc" ],
+                            "description":"(Statistics for RTP streams, refer here: https://www.w3.org/TR/webrtc-stats/#rtctatstype-*)",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "candidatePairs": {
                             "type": "array",
+                            "description":"ICE candidate pairs statistics related to the RTCIceTransport objects (all objects for which RTCStatsType is 'candidate-pair')",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "transports": {
                             "type": "array",
+                            "description":"Transport statistics realted to RTCPeerConnection objects (all objects for which RTCStatsType is 'transport')",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "msts": {
                             "type": "array",
+                            "description":"Contains statistics related to specific MST (all objects for which RTCStatsType is 'track')",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "dataChannels": {
                             "type": "array",
+                            "description":"Statistics related to each data channel (all objects for which RTCStatsType is 'data-channel')",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "codecs": {
                             "type": "array",
+                            "description":"Statistics of the codecs (all objects for which RTCStatsType is 'codec')",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "timestamp": {
-                            "type": "number"
+                            "type": "number",
+                            "description": "Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                         }
                     }
                 }
@@ -2175,7 +2198,8 @@
                     "maxLength": "128"
                 },
                 "connectionID": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
                 },
                 "prevState": {
                     "type": "string"
@@ -2217,7 +2241,8 @@
                     "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "connectionID": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
                 },
                 "remoteID": {
                     "type": "string",
@@ -2261,7 +2286,8 @@
                     "maxLength": "128"
                 },
                 "connectionID": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
                 },
                 "currIceCandidatePair": {
                     "$ref": "#/definitions/iceCandidatesObj"
@@ -2307,17 +2333,20 @@
                     "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
                 },
                 "connectionID": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
                 },
                 "remoteID": {
                     "type": "string",
                     "maxLength": "128"
                 },
                 "localSDP": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Stringified SDP of the local user "
                 },
                 "remoteSDP": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Stringified SDP of the remote user "
                 }
             }
         },
@@ -2419,7 +2448,8 @@
                     "maxLength": "128"
                 },
                 "connectionID": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
                 },
                 "currIceCandidatePair": {
                     "$ref": "#/definitions/iceCandidatesObj"
@@ -2465,10 +2495,12 @@
             ],
             "properties": {
                 "ssrc": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Synchronization source, a 32 bit identifier in the RTP header (https://www.ietf.org/rfc/rfc3550.txt)"
                 },
                 "cname": {
-                    "type": "string"
+                    "type": "string",
+                    "description":"Canonical name, a persistent transport-level identifier taken from RTP (RFC3550)"
                 },
                 "streamType": {
                     "type": "string",
@@ -2485,23 +2517,33 @@
                     ]
                 },
                 "mediaType": {
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "audio",
+                        "video",
+                        "screen"
+                    ]
                 },
                 "userID": {
                     "type": "string",
-                    "maxLength": "128"
+                    "maxLength": "128",
+                    "description": "SSRC owner userID"
                 },
                 "msid": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "msid is available on a= field of SDP message (https://webrtchacks.com/sdp-anatomy/#line39)"
                 },
                 "mslabel": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "mslabel is available on a= field of SDP message (https://webrtchacks.com/sdp-anatomy/#line40)"
                 },
                 "label": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "label is available on a= field of SDP message (https://webrtchacks.com/sdp-anatomy/#line41)"
                 },
                 "localStartTime": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Unix timestamp when the stream is started as reported by the local device clock"
                 }
             }
         },
