@@ -23,7 +23,7 @@
         ",
         "version": "1.0.0"
     },
-    "host": "api.callstats.io",
+    "host": "HOSTNAME",
     "schemes": [
         "https"
     ],
@@ -34,10 +34,11 @@
         "/authenticate": {
             "post": {
                 "externalDocs": {
-                    "url": "https://tools.ietf.org/html/rfc6749#section-4.1.3",
+                    "url": "//tools.ietf.org/html/rfc6749#section-4.1.3",
                     "description": "OAuth2 Access Token Request"
                 },
-                "description": "Returns an access token",
+                "summary": "Returns an access token",
+                "description": "<b>HOSTNAME: auth.callstats.io</b><br />",
                 "produces": [
                     "application/json"
                 ],
@@ -56,30 +57,14 @@
                         "name": "code",
                         "required": true,
                         "in": "formData",
-                        "description": "JWT signed ApplicationToken with alg set to HS256",
+                        "description": "JWT signed ApplicationToken with alg set to ES256",
                         "type": "string"
                     },
                     {
                         "name": "client_id",
                         "required": true,
                         "in": "formData",
-                        "description": "localID@appID",
-                        "type": "string"
-                    },
-                    {
-                        "name": "localID",
-                        "required": true,
-                        "in": "formData",
-                        "description": "It is provided by the developer and MUST NOT be null or empty.",
-                        "type": "string",
-                        "maxLength": "128"
-
-                    },
-                    {
-                        "name": "appID",
-                        "required": true,
-                        "in": "formData",
-                        "description": "Application ID is obtained from callstats.io.",
+                        "description": "localID@appID ( localID is provided by the developer and MUST NOT be null or empty and Application ID is obtained from callstats.io)",
                         "type": "string"
                     }
                 ],
@@ -111,18 +96,17 @@
         "/v1/apps/{appID}/conferences/{confID}": {
             "post": {
                 "summary": "UserJoined / Create conference Event",
-                "description": "This is the first step to add a new participant to the list of conference participants or start a new conference. If there are no participants in the given conference then a new conference will be created with the conferenceID provided.",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />This is the first step to add a new participant to the list of conference participants or start a new conference. If there are no participants in the given conference then a new conference will be created with the conferenceID provided.",
                 "consumes": [
                     "application/json"
                 ],
                 "parameters": [
                     {
-                        "name": "token",
+                        "name": "Authorization",
                         "in": "header",
                         "description": "Header name has to be 'Authorization' and value 'Bearer ' + token returned by authenticate (e.g. Authorization: Bearer mF_9.B5f-4.1JqM).",
                         "required": true,
-                        "type": "string",
-                        "format": "string"
+                        "type": "string"
                     },
                     {
                         "name": "appID",
@@ -195,15 +179,14 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/user/alive": {
             "post": {
                 "summary": "UserAlive Event",
-                "description": "UserAlive makes sure that the user is present in the conference\n. We recommend you send this event every 10 seconds.\n If there is no userAlive event from a particular user for more than 30 seconds, we assume that the user has left the conference.",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />UserAlive makes sure that the user is present in the conference\n. We recommend you send this event every 10 seconds.\n If there is no userAlive event from a particular user for more than 30 seconds, we assume that the user has left the conference.",
                 "parameters": [
                     {
-                        "name": "token",
+                        "name": "Authorization",
                         "in": "header",
                         "description": "Header name has to be 'Authorization' and value 'Bearer ' + token returned by authenticate (e.g. Authorization: Bearer mF_9.B5f-4.1JqM).",
                         "required": true,
-                        "type": "string",
-                        "format": "string"
+                        "type": "string"
                     },
                     {
                         "name": "appID",
@@ -283,15 +266,14 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/user/left": {
             "post": {
                 "summary": "UserLeft Event",
-                "description": "UserLeft event should be sent when a user leaves the conference.\nThis event removes the user from the list of conference participants.\nThe conference will be closed when all the users have left or timed out.",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />UserLeft event should be sent when a user leaves the conference.\nThis event removes the user from the list of conference participants.\nThe conference will be closed when all the users have left or timed out.",
                 "parameters": [
                     {
-                        "name": "token",
+                        "name": "Authorization",
                         "in": "header",
                         "description": "Header name has to be 'Authorization' and value 'Bearer ' + token returned by authenticate (e.g. Authorization: Bearer mF_9.B5f-4.1JqM).",
                         "required": true,
-                        "type": "string",
-                        "format": "string"
+                        "type": "string"
                     },
                     {
                         "name": "appID",
@@ -371,15 +353,14 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/devices/list": {
             "post": {
                 "summary": "Submitting connected/active devices",
-                "description": "Information about the connected and/or active media devices.\nAvailable eventTypes are given below:\n   - connectedDeviceList (All the media devices connected to the endpoint) \n   - activeDeviceList (Active media devices used by the endpoint) \n",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />Information about the connected and/or active media devices.\nAvailable eventTypes are given below:\n   - connectedDeviceList (All the media devices connected to the endpoint) \n   - activeDeviceList (Active media devices used by the endpoint) \n",
                 "parameters": [
                     {
-                        "name": "token",
+                        "name": "Authorization",
                         "in": "header",
                         "description": "Header name has to be 'Authorization' and value 'Bearer ' + token returned by authenticate (e.g. Authorization: Bearer mF_9.B5f-4.1JqM).",
                         "required": true,
-                        "type": "string",
-                        "format": "string"
+                        "type": "string"
                     },
                     {
                         "name": "appID",
@@ -459,15 +440,14 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/media/actions": {
             "post": {
                 "summary": "Submitting UserMedia Events",
-                "description": "There are several user events related to media, for example, a user can mute the audio or unmute the audio. Such events can be reported to callstats.io via user media events:\n   - audioMute (user muted the audio) \n   - audioUnMute (user unmuted the audio) \n   - videoPause (video paused by the user) \n   - videoResume (video resumed by the user) \n   - screenShareStart (user started screensharing) \n   - screenShareStop (user stopped screensharing) \n",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />There are several user events related to media, for example, a user can mute the audio or unmute the audio. Such events can be reported to callstats.io via user media events:\n   - audioMute (user muted the audio) \n   - audioUnMute (user unmuted the audio) \n   - videoPause (video paused by the user) \n   - videoResume (video resumed by the user) \n   - screenShareStart (user started screensharing) \n   - screenShareStop (user stopped screensharing) \n",
                 "parameters": [
                     {
-                        "name": "token",
+                        "name": "Authorization",
                         "in": "header",
                         "description": "Header name has to be 'Authorization' and value 'Bearer ' + token returned by authenticate (e.g. Authorization: Bearer mF_9.B5f-4.1JqM).",
                         "required": true,
-                        "type": "string",
-                        "format": "string"
+                        "type": "string"
                     },
                     {
                         "name": "appID",
@@ -547,15 +527,14 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/fabric": {
             "post": {
                 "summary": "Submitting network related events",
-                "description": "These are connection related events, there are three fabric events possible\n  - fabricSetup (connection is setup and you can send data) \n  - fabricSetupFailed (connection failed and you cannot send data) \n  - fabricTerminated (connection ended and you cannot send data) \n",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />These are connection related events, there are three fabric events possible\n  - fabricSetup (connection is setup and you can send data) \n  - fabricSetupFailed (connection failed and you cannot send data) \n  - fabricTerminated (connection ended and you cannot send data) \n",
                 "parameters": [
                     {
-                        "name": "token",
+                        "name": "Authorization",
                         "in": "header",
                         "description": "Header name has to be 'Authorization' and value 'Bearer ' + token returned by authenticate (e.g. Authorization: Bearer mF_9.B5f-4.1JqM).",
                         "required": true,
-                        "type": "string",
-                        "format": "string"
+                        "type": "string"
                     },
                     {
                         "name": "appID",
@@ -635,15 +614,14 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/feedback": {
             "post": {
                 "summary": "Submitting Conference user feedback",
-                "description": "You can submit overall rating to conference and add comments as well. It is also possible to give separate ratings for audio and video.\n",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />You can submit overall rating to conference and add comments as well. It is also possible to give separate ratings for audio and video.\n",
                 "parameters": [
                     {
-                        "name": "token",
+                        "name": "Authorization",
                         "in": "header",
                         "description": "Header name has to be 'Authorization' and value 'Bearer ' + token returned by authenticate (e.g. Authorization: Bearer mF_9.B5f-4.1JqM).",
                         "required": true,
-                        "type": "string",
-                        "format": "string"
+                        "type": "string"
                     },
                     {
                         "name": "appID",
@@ -723,15 +701,14 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/dominantspeaker": {
             "post": {
                 "summary": "Submitting dominantspeaker event",
-                "description": "Using this event, you can specify the dominant speaker of the conference. For reference you can check this link: http://www.sciencedirect.com/science/article/pii/S0885230812000186 \n",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />Using this event, you can specify the dominant speaker of the conference. For reference you can check this link: http://www.sciencedirect.com/science/article/pii/S0885230812000186 \n",
                 "parameters": [
                     {
-                        "name": "token",
+                        "name": "Authorization",
                         "in": "header",
                         "description": "Header name has to be 'Authorization' and value 'Bearer ' + token returned by authenticate (e.g. Authorization: Bearer mF_9.B5f-4.1JqM).",
                         "required": true,
-                        "type": "string",
-                        "format": "string"
+                        "type": "string"
                     },
                     {
                         "name": "appID",
@@ -811,15 +788,14 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/stats": {
             "post": {
                 "summary": "Submitting Conference stats",
-                "description": "All the conference stats inlcuding tracks, candidatePairs,trasnports, msts, dataChannels, codes and timestamps can be submitted using this event. For the time being tracks, candidatePairs and timestamp are mandatory fields. \n",
+                "description": "<b>HOSTNAME: stats.callstats.io</b><br />All the conference stats inlcuding tracks, candidatePairs,trasnports, msts, dataChannels, codes and timestamps can be submitted using this event. For the time being tracks, candidatePairs and timestamp are mandatory fields. \n",
                 "parameters": [
                     {
-                        "name": "token",
+                        "name": "Authorization",
                         "in": "header",
                         "description": "Header name has to be 'Authorization' and value 'Bearer ' + token returned by authenticate (e.g. Authorization: Bearer mF_9.B5f-4.1JqM).",
                         "required": true,
-                        "type": "string",
-                        "format": "string"
+                        "type": "string"
                     },
                     {
                         "name": "appID",
@@ -1261,20 +1237,25 @@
                 },
                 "remoteID": {
                     "type": "string",
-                    "maxLength": "128"
+                    "maxLength": "128",
+                    "description": "It is provided by the developer and MUST NOT be null or empty."
+
                 },
                 "delay": {
-                    "type": "number"
+                    "type": "number",
+                    "description":"Total time to setup a conference for the participant. The time when the user joins until the chosen candidate pair is connected (setup/failure)"
                 },
                 "connectionID": {
                     "type": "string",
                     "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
                 },
                 "iceGatheringDelay": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The time taken for the ICE gathering to finish (ICE gathering state from new to complete)"
                 },
                 "iceConnectivityDelay": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The time taken for the ICE to establish the connectivity (ICE connection state new to connected/completed)"
                 },
                 "localCandidates": {
                     "type": "array",
@@ -1358,7 +1339,8 @@
                 },
                 "remoteID": {
                     "type": "string",
-                    "maxLength": "128"
+                    "maxLength": "128",
+                    "description": "It is provided by the developer and MUST NOT be null or empty."
                 },
                 "feedback": {
                     "type": "object",
@@ -1368,7 +1350,7 @@
                     "properties": {
                         "overallRating": {
                             "type": "integer",
-                            "description": "Rating from 1 to 5 (MOS score)"
+                            "description": "Rating from 1 to 5 (MOS score- https://en.wikipedia.org/wiki/Mean_opinion_score)"
                         },
                         "videoQualityRating": {
                             "type": "integer",
@@ -1380,7 +1362,7 @@
                         },
                         "comments": {
                             "type": "string",
-                            "description": "participant comments"
+                            "description": "Comments from the participant"
                         }
                     }
                 }
@@ -1466,7 +1448,8 @@
                     "type": "object",
                     "required": [
                         "tracks",
-                        "candidatePairs"
+                        "candidatePairs",
+                        "timestamp"
                     ],
                     "properties": {
                         "tracks": {
@@ -1579,7 +1562,8 @@
                 },
                 "remoteID": {
                     "type": "string",
-                    "maxLength": "128"
+                    "maxLength": "128",
+                    "description": "It is provided by the developer and MUST NOT be null or empty."
                 },
                 "connectionID": {
                     "type": "string",
@@ -1630,7 +1614,8 @@
                 },
                 "remoteID": {
                     "type": "string",
-                    "maxLength": "128"
+                    "maxLength": "128",
+                    "description": "It is provided by the developer and MUST NOT be null or empty."
                 },
                 "ssrcData": {
                     "type": "array",
@@ -1667,7 +1652,8 @@
                 },
                 "remoteID": {
                     "type": "string",
-                    "maxLength": "128"
+                    "maxLength": "128",
+                    "description": "It is provided by the developer and MUST NOT be null or empty."
                 },
                 "connectionID": {
                     "type": "string",
@@ -1722,7 +1708,8 @@
                 },
                 "remoteID": {
                     "type": "string",
-                    "maxLength": "128"
+                    "maxLength": "128",
+                    "description": "It is provided by the developer and MUST NOT be null or empty."
                 },
                 "localSDP": {
                     "type": "string",
@@ -1748,13 +1735,16 @@
             ],
             "properties": {
                 "candidateID": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "as defined here: https://www.w3.org/TR/webrtc-stats/"
                 },
                 "localAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Local address"
                 },
                 "localPort": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "Local port number"
                 },
                 "localCandidateType": {
                     "type": "string",
@@ -1772,10 +1762,12 @@
                     ]
                 },
                 "remoteAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Remote address"
                 },
                 "remotePort": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "Remote port number"
                 },
                 "remoteCandidateType": {
                     "type": "string",
@@ -1791,9 +1783,6 @@
                         "relayed",
                         "local"
                     ]
-                },
-                "transportType": {
-                    "type": "string"
                 },
                 "protocol": {
                     "type": "string",
