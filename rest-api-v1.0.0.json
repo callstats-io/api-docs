@@ -1454,47 +1454,42 @@
                     "properties": {
                         "tracks": {
                             "type": "array",
-                            "enum":[   "inboundrtp",
-                                       "outboundrtp",
-                                       "inbound-rtp",
-                                       "outbound-rtp",
-                                       "ssrc" ],
-                            "description":"(Statistics for RTP streams, refer here: https://www.w3.org/TR/webrtc-stats/#rtctatstype-*)",
+                            "description":" Is an array of objects of the RTCStatsType: 'inbound-rtp' and 'outbound-rtp'(These will containt statistics for RTP streams, RTCInboundRTPStreamStats and RTCOutboundRTPStreamStats, respectively. refer here: https://www.w3.org/TR/webrtc-stats for details)",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "candidatePairs": {
                             "type": "array",
-                            "description":"ICE candidate pairs statistics related to the RTCIceTransport objects (all objects for which RTCStatsType is 'candidate-pair')",
+                            "description":"ICE candidate pairs statistics related to the RTCIceTransport objects (all objects for which RTCStatsType is 'candidate-pair', refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype)",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "transports": {
                             "type": "array",
-                            "description":"Transport statistics realted to RTCPeerConnection objects (all objects for which RTCStatsType is 'transport')",
+                            "description":"Transport statistics realted to RTCPeerConnection objects (all objects for which RTCStatsType is 'transport', refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype)",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "msts": {
                             "type": "array",
-                            "description":"Contains statistics related to specific MST (all objects for which RTCStatsType is 'track')",
+                            "description":"Contains statistics related to specific MST (all objects for which RTCStatsType is 'track', refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype)",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "dataChannels": {
                             "type": "array",
-                            "description":"Statistics related to each data channel (all objects for which RTCStatsType is 'data-channel')",
+                            "description":"Statistics related to each data channel (all objects for which RTCStatsType is 'data-channel', refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype)",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "codecs": {
                             "type": "array",
-                            "description":"Statistics of the codecs (all objects for which RTCStatsType is 'codec')",
+                            "description":"Statistics of the codecs (all objects for which RTCStatsType is 'codec', refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype)",
                             "items": {
                                 "type": "object"
                             }
