@@ -1454,42 +1454,42 @@
                     "properties": {
                         "tracks": {
                             "type": "array",
-                            "description":" Is an array of objects of the RTCStatsType: 'inbound-rtp' and 'outbound-rtp'(These will containt statistics for RTP streams, RTCInboundRTPStreamStats and RTCOutboundRTPStreamStats, respectively. refer here: https://www.w3.org/TR/webrtc-stats for details)",
+                            "description":" Is an array of objects for which the RTCStatsType is: 'inbound-rtp' and 'outbound-rtp'. An individual object will containt statistics for each RTP stream. In this case, the application needs to provide the RTCRTPStreamStats objects and the associateStatsId. associateStatsId corresponds to the RTCInboundRTPStreamStats and RTCOutboundRTPStreamStats, respectively. Refer to https://www.w3.org/TR/webrtc-stats for details.",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "candidatePairs": {
                             "type": "array",
-                            "description":"ICE candidate pairs statistics related to the RTCIceTransport objects (all objects for which RTCStatsType is 'candidate-pair', refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype)",
+                            "description":"Is an array of objects for which RTCStatsType is: 'candidate-pair'. An individual object will contain statistics related to the ICE candidate pairs, i.e., the RTCIceTransport objects. Refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "transports": {
                             "type": "array",
-                            "description":"Transport statistics realted to RTCPeerConnection objects (all objects for which RTCStatsType is 'transport', refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype)",
+                            "description":"Is an array of objects for which RTCStatsType is: 'transport'. An individual object will contain statistics related to the underlying transport, i.e., the RTCTransportStats objects. Refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype.",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "msts": {
                             "type": "array",
-                            "description":"Contains statistics related to specific MST (all objects for which RTCStatsType is 'track', refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype)",
+                            "description":"Is an array of objects contained within the RTCStatsType 'track' object. The individual object will contain statistics related to the individual Media StreamTrack, i.e., the RTCMediaStreamTrackStats objects and not the RTCMediaStreamStats. Refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype.",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "dataChannels": {
                             "type": "array",
-                            "description":"Statistics related to each data channel (all objects for which RTCStatsType is 'data-channel', refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype)",
+                            "description": "Is an array of objects for which RTCStatsType is: 'data-channel'. An individual object will contain statistics related to the data channel, i.e., the RTCDataChannelStats objects. Refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype.",
                             "items": {
                                 "type": "object"
                             }
                         },
                         "codecs": {
                             "type": "array",
-                            "description":"Statistics of the codecs (all objects for which RTCStatsType is 'codec', refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype)",
+                            "description":"Is an array of objects for which RTCStatsType is: 'codec'. An individual object will contain statistics related to the codec, i.e., the RTCCodecStats objects. Refer: https://w3c.github.io/webrtc-stats/#dom-rtcstatstype.",
                             "items": {
                                 "type": "object"
                             }
