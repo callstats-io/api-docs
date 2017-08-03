@@ -1248,7 +1248,7 @@
                 },
                 "connectionID": {
                     "type": "string",
-                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
+                    "description":"Unique identifier (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol) of connection between two endpoints. This identifier should remain the same throughout the life-time of the connection. "
                 },
                 "iceGatheringDelay": {
                     "type": "number",
@@ -1434,7 +1434,7 @@
                 },
                 "connectionID": {
                     "type": "string",
-                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
+                    "description":"Unique identifier (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol) of connection between two endpoints. This identifier should remain the same throughout the life-time of the connection. "
                 },
                 "timestamp": {
                     "type": "number",
@@ -1567,7 +1567,7 @@
                 },
                 "connectionID": {
                     "type": "string",
-                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
+                    "description":"Unique identifier (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol) of connection between two endpoints. This identifier should remain the same throughout the life-time of the connection. "
                 },
                 "prevState": {
                     "type": "string"
@@ -1610,7 +1610,7 @@
                 },
                 "connectionID": {
                     "type": "string",
-                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
+                    "description":"Unique identifier (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol) of connection between two endpoints. This identifier should remain the same throughout the life-time of the connection. "
                 },
                 "remoteID": {
                     "type": "string",
@@ -1657,7 +1657,7 @@
                 },
                 "connectionID": {
                     "type": "string",
-                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
+                    "description":"Unique identifier (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol) of connection between two endpoints. This identifier should remain the same throughout the life-time of the connection. "
                 },
                 "currIceCandidatePair": {
                     "$ref": "#/definitions/iceCandidatesObj"
@@ -1704,7 +1704,7 @@
                 },
                 "connectionID": {
                     "type": "string",
-                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
+                    "description":"Unique identifier (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol) of connection between two endpoints. This identifier should remain the same throughout the life-time of the connection. "
                 },
                 "remoteID": {
                     "type": "string",
@@ -1822,7 +1822,7 @@
                 },
                 "connectionID": {
                     "type": "string",
-                    "description":"Unique identifier of connection between two endpoints (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol)"
+                    "description":"Unique identifier (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol) of connection between two endpoints. This identifier should remain the same throughout the life-time of the connection. "
                 },
                 "currIceCandidatePair": {
                     "$ref": "#/definitions/iceCandidatesObj"
