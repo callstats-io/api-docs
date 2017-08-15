@@ -926,6 +926,11 @@
                     "description": "It is provided by the developer and MUST NOT be null or empty."
 
                 },
+                "originID": {
+                    "type": "string",
+                    "maxLength": 128,
+                    "description": "ID of the endpoint connecting to the middlebox"
+                },
                 "deviceID": {
                     "type": "string",
                     "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
