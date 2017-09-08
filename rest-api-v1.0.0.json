@@ -217,7 +217,7 @@
                         "description": "Request payload",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/CommonHeaderParams"
+                            "$ref": "#/definitions/commonHeaderParams"
                         }
                     }
                 ],
@@ -391,7 +391,7 @@
                         "description": "Request payload",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/CommonHeaderParams"
+                            "$ref": "#/definitions/commonHeaderParams"
                         }
                     }
                 ],
@@ -438,10 +438,10 @@
                 }
             }
         },
-        "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/fabric": {
+        "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/fabric/setup": {
             "post": {
                 "summary": "Fabric setup event",
-                "description": "<b>HOSTNAME: events.callstats.io</b><br />These are connection related events, it should be sent during initial fabric setup phase\n  - fabricSetup (connection is setup and you can send data) \n ",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />These are connection related events, it should be sent during initial fabric setup phase. After this connection is setup and you can send data) \n ",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -528,7 +528,7 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/fabric/setupfailed": {
             "post": {
                 "summary": "Fabric setup failed event",
-                "description": "<b>HOSTNAME: events.callstats.io</b><br />These are connection related events, it should be sent when fabric setup fails \n  - fabricSetupFailed (connection failed and you cannot send data)\n",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />These are connection related events, it should be sent when fabric setup fails. This means connection has failed and you cannot send data)\n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -616,7 +616,7 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/fabric/terminated": {
             "post": {
                 "summary": "Fabric terminated event",
-                "description": "<b>HOSTNAME: events.callstats.io</b><br />These are connection related events, it should be sent when fabric is terminated \n  - fabricTerminated (connection ended and you cannot send data)\n",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />These are connection related events, it should be sent when fabric is terminated. This means connection has ended and you cannot send data)\n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -829,7 +829,7 @@
                         "description": "Request payload",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/fabricDroppedBody"
+                            "$ref": "#/definitions/fabricStatusBody"
                         }
                     }
                 ],
@@ -1141,7 +1141,7 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/ice/status": {
             "post": {
                 "summary": "ICE disruption start event",
-                "description": "<b>HOSTNAME: events.callstats.io</b><br />\n When ICE disurption starts, this event should be submitted \n",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />\n When ICE disruption starts, this event should be submitted \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1228,7 +1228,7 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/ice/status ": {
             "post": {
                 "summary": "ICE disruption end event",
-                "description": "<b>HOSTNAME: events.callstats.io</b><br />\n When ICE disurption ends, this event should be submitted \n",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />\n When ICE disruption ends, this event should be submitted \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1663,7 +1663,7 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/ice/status      ": {
             "post": {
                 "summary": "ICE connection disruption start event",
-                "description": "<b>HOSTNAME: events.callstats.io</b><br />\n When ICE connection disrutption starts, this event should be submitted \n",
+                "description": "<b>HOSTNAME: events.callstats.io</b><br />\n When ICE connection disruption starts, this event should be submitted \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1700,7 +1700,7 @@
                         "description": "Request payload",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/iceTerminatedBody"
+                            "$ref": "#/definitions/iceConnectionDisruptionStartBody"
                         }
                     }
                 ],
@@ -1729,7 +1729,7 @@
                     "422": {
                         "description": "Invalid request body data.",
                         "schema": {
-                            "$ref": "#/definitions/iceConnectionDisruptionStartBody"
+                            "$ref": "#/definitions/invalidRequestBody"
                         }
                     },
                     "500": {
@@ -1816,7 +1816,7 @@
                     "422": {
                         "description": "Invalid request body data.",
                         "schema": {
-                            "$ref": "#/definitions/iceConnectionDisruptionStartBody"
+                            "$ref": "#/definitions/invalidRequestBody"
                         }
                     },
                     "500": {
@@ -2135,7 +2135,7 @@
                         "description": "Request payload",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/AppLogBody"
+                            "$ref": "#/definitions/appLogBody"
                         }
                     }
                 ],
@@ -2659,7 +2659,7 @@
                         "description": "Request payload",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/CommonHeaderParams"
+                            "$ref": "#/definitions/commonHeaderParams"
                         }
                     }
                 ],
@@ -2941,7 +2941,7 @@
               }
           }
       },
-      "CommonHeaderParams": {
+      "commonHeaderParams": {
           "type": "object",
           "required": [
               "localID",
@@ -3006,7 +3006,7 @@
               },
           }
       },
-      "AppLogBody": {
+      "appLogBody": {
           "type": "object",
           "required": [
               "localID",
@@ -3374,7 +3374,7 @@
                   "description": "Local candidate ID"
               },
               "remoteCandidateId": {
-                  "type": "integer",
+                  "type": "string",
                   "description": "Remote candidate ID"
               },
               "state": {
@@ -3388,12 +3388,12 @@
                   "description": "Candidate priority"
               },
               "nominated": {
-                  "type": "string",
+                  "type": "boolean",
                   "enum": ["true", "false"]
               }
           }
       },
-      "fabricDroppedBody": {
+      "fabricStatusBody": {
           "type": "object",
           "required": [
               "localID",
@@ -3703,13 +3703,13 @@
               "localIceCandidates": {
                   "type": "array",
                   "items": {
-                      "$ref": "#/definitions/iceCandidates"
+                      "$ref": "#/definitions/iceCandidatesLocal"
                   }
               },
               "remoteIceCandidates": {
                   "type": "array",
                   "items": {
-                      "$ref": "#/definitions/iceCandidates"
+                      "$ref": "#/definitions/iceCandidatesRemote"
                   }
               },
               "iceCandidatePairs": {
@@ -3721,7 +3721,7 @@
 
           }
       },
-      "iceCandidates": {
+      "iceCandidatesLocal": {
           "type": "object",
           "required": [
               "id",
@@ -3740,6 +3740,47 @@
                   "type": "string",
                   "enum": [
                     "localcandidate", "local-candidate"
+                  ]
+              },
+              "ip": {
+                  "type": "string",
+                  "description": "A valid IPv4 or IPv6 address"
+              },
+              "port": {
+                  "type": "integer",
+                  "description": "non-zero port"
+              },
+              "candidateType": {
+                  "type": "string",
+                  "enum": [
+                    "host", "srflx", "prflx", "relay", "stun", "serverreflexive", "peerreflexive", "turn", "relayed", "local"
+                  ]
+              },
+              "transport": {
+                  "type": "string",
+                  "enum": ["tcp", "udp"]
+              }
+          }
+      },
+      "iceCandidatesRemote": {
+          "type": "object",
+          "required": [
+              "id",
+              "type",
+              "ip",
+              "port",
+              "candidateType",
+              "transport"
+          ],
+          "properties": {
+              "id": {
+                  "type": "string",
+                  "description": "as defined here: https://www.w3.org/TR/webrtc-stats/"
+              },
+              "type": {
+                  "type": "string",
+                  "enum": [
+                    "remotecandidate", "remote-candidate"
                   ]
               },
               "ip": {
@@ -4174,8 +4215,7 @@
             "connectionID",
             "currIceCandidatePair",
             "currIceConnectionState",
-            "prevIceConnectionState",
-            "delay"
+            "prevIceConnectionState"
 
           ],
           "properties": {
@@ -4224,9 +4264,6 @@
                   "enum": [
                     "connected", "completed"
                   ]
-              },
-              "delay": {
-                  "type": "number"
               }
 
           }
@@ -4312,8 +4349,7 @@
             "connectionID",
             "prevIceCandidatePair",
             "currIceConnectionState",
-            "prevIceConnectionState",
-            "delay"
+            "prevIceConnectionState"
 
           ],
           "properties": {
@@ -4362,9 +4398,6 @@
                   "enum": [
                     "checking", "connected", "completed", "failed", "disconnected", "closed"
                   ]
-              },
-              "delay": {
-                  "type": "number"
               }
 
           }
