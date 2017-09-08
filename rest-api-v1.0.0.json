@@ -4480,8 +4480,7 @@
             "remoteID",
             "connectionID",
             "currIceConnectionState",
-            "prevIceConnectionState",
-            "delay"
+            "prevIceConnectionState"
 
           ],
           "properties": {
@@ -4527,9 +4526,6 @@
                   "enum": [
                     "checking", "new"
                   ]
-              },
-              "delay": {
-                  "type": "number"
               }
 
           }
@@ -4545,8 +4541,7 @@
             "connectionID",
             "prevIceCandidatePair",
             "currIceConnectionState",
-            "prevIceConnectionState",
-            "delay"
+            "prevIceConnectionState"
 
           ],
           "properties": {
@@ -4595,9 +4590,6 @@
                   "enum": [
                     "connected", "completed", "failed", "disconnected"
                   ]
-              },
-              "delay": {
-                  "type": "number"
               }
 
           }
@@ -4612,8 +4604,7 @@
             "remoteID",
             "connectionID",
             "currIceConnectionState",
-            "prevIceConnectionState",
-            "delay"
+            "prevIceConnectionState"
 
           ],
           "properties": {
@@ -4657,9 +4648,6 @@
               "prevIceConnectionState": {
                 "type": "string",
                 "description": "checking"
-              },
-              "delay": {
-                  "type": "number"
               }
 
           }
