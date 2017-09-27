@@ -3668,7 +3668,7 @@
               },
               "stats": {
                   "type": "array",
-                  "description": "An array of stats object. Currently only a single entry may be submitted.",
+                  "description": "An array of stats objects",
                   "items": {
                       "type": "object"
                   }
@@ -4127,8 +4127,11 @@
                   "description" : "Media Device ID"
               },
               "remoteIDList": {
-                  "type": "string",
-                  "description" : "List of remoteIDs separated by a comma, at least one remoteID should be listed"
+                  "type": "array",
+                  "items": {
+                      "type": "string"
+                  },
+                  "description" : "Array of remoteIDs separated by a comma, at least one remoteID should be listed"
 
               }
             }
@@ -4146,7 +4149,7 @@
           "properties": {
             "eventType": {
                 "type": "string",
-                "enum": ["mediaPlaybackStart", "mediaPlaybackSuspended", "mediaPlaybackStalled"]
+                "enum": ["mediaPlaybackStart", "mediaPlaybackSuspended", "mediaPlaybackStalled", "oneWayMedia"]
             },
               "localID": {
                   "type": "string",
@@ -4169,7 +4172,7 @@
               },
               "ssrc": {
                   "type": "integer",
-                  "description" : "Stringified integer of SSRC ID"
+                  "description" : "Stringified integer of SSRC ID (SSRC is not required for the event: oneWayMedia)"
               }
             }
       },
@@ -4499,7 +4502,6 @@
             "timestamp",
             "remoteID",
             "connectionID",
-            "currIceCandidatePair",
             "currIceConnectionState",
             "prevIceConnectionState",
             "delay"
@@ -4539,8 +4541,23 @@
                   "type": "string",
                   "description":"Unique identifier (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol) of connection between two endpoints. This identifier should remain the same throughout the life-time of the connection. "
               },
-              "currIceCandidatePair": {
-                  "$ref": "#/definitions/iceCandidatesObj"
+              "localIceCandidates": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/iceCandidatesLocal"
+                  }
+              },
+              "remoteIceCandidates": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/iceCandidatesRemote"
+                  }
+              },
+              "iceCandidatePairs": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/iceCandidatesObj"
+                  }
               },
               "currIceConnectionState": {
                   "type": "string",
@@ -4568,7 +4585,8 @@
             "remoteID",
             "connectionID",
             "currIceConnectionState",
-            "prevIceConnectionState"
+            "prevIceConnectionState",
+            "delay"
 
           ],
           "properties": {
@@ -4605,6 +4623,24 @@
                   "type": "string",
                   "description":"Unique identifier (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol) of connection between two endpoints. This identifier should remain the same throughout the life-time of the connection. "
               },
+              "localIceCandidates": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/iceCandidatesLocal"
+                  }
+              },
+              "remoteIceCandidates": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/iceCandidatesRemote"
+                  }
+              },
+              "iceCandidatePairs": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/iceCandidatesObj"
+                  }
+              },
               "currIceConnectionState": {
                   "type": "string",
                   "description": "closed"
@@ -4614,6 +4650,9 @@
                   "enum": [
                     "checking", "new"
                   ]
+              },
+              "delay": {
+                  "type": "number"
               }
 
           }
