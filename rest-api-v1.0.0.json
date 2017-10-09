@@ -2955,7 +2955,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "endpointInfo": {
                   "$ref": "#/definitions/endpointInfo"
@@ -3024,7 +3024,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               }
           }
       },
@@ -3054,7 +3054,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "userName": {
                   "type": "string",
@@ -3092,7 +3092,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "connectionID": {
                   "type": "string",
@@ -3141,7 +3141,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -3205,7 +3205,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "connectionID": {
                   "type": "string",
@@ -3256,7 +3256,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -3286,7 +3286,8 @@
                   ]
               },
               "delay": {
-                  "type": "number"
+                  "type": "number",
+                  "description": "delay in milliseconds (example: 3.5 seconds is 3500 in milliseconds)"
               },
               "relayType": {
                   "type": "string",
@@ -3324,7 +3325,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "connectionID": {
                   "type": "string",
@@ -3482,7 +3483,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -3507,7 +3508,8 @@
                   ]
               },
               "delay": {
-                  "type": "number"
+                  "type": "number",
+                  "description": "delay in milliseconds (example: 3.5 seconds is 3500 in milliseconds)"
               }
           }
       },
@@ -3537,7 +3539,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -3594,7 +3596,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               }
           }
       },
@@ -3629,7 +3631,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -3669,7 +3671,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "cpuUsage": {
                   "type": "number",
@@ -3722,7 +3724,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -3732,7 +3734,7 @@
               },
               "delay": {
                   "type": "number",
-                  "description":"Total time to setup a conference for the participant. The time when the user joins until the chosen candidate pair is connected (setup/failure)"
+                  "description":"Total time (in milliseconds) to setup a conference for the participant. The time when the user joins until the chosen candidate pair is connected (setup/failure)"
               },
               "connectionID": {
                   "type": "string",
@@ -3740,11 +3742,11 @@
               },
               "iceGatheringDelay": {
                   "type": "number",
-                  "description": "The time taken for the ICE gathering to finish (ICE gathering state from new to complete)"
+                  "description": "The time (in milliseconds) taken for the ICE gathering to finish (ICE gathering state from new to complete)"
               },
               "iceConnectivityDelay": {
                   "type": "number",
-                  "description": "The time taken for the ICE to establish the connectivity (ICE connection state new to connected/completed)"
+                  "description": "The time (in milliseconds) taken for the ICE to establish the connectivity (ICE connection state new to connected/completed)"
               },
               "fabricTransmissionDirection": {
                   "type": "string",
@@ -3888,7 +3890,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "reason": {
                   "type": "string",
@@ -3945,7 +3947,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -3984,7 +3986,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "cpuUsage": {
                   "type": "number",
@@ -4090,7 +4092,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "mediaDeviceID": {
                   "type": "string",
@@ -4138,7 +4140,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "ssrc": {
                   "type": "integer",
@@ -4179,7 +4181,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -4219,7 +4221,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "mediaDeviceList": {
                   "type": "array",
@@ -4301,7 +4303,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -4367,7 +4369,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -4394,7 +4396,8 @@
                   "description": "disconnected"
               },
               "delay": {
-                  "type": "number"
+                  "type": "number",
+                  "description": "delay in milliseconds (example: 3.5 seconds is 3500 in milliseconds)"
               }
 
           }
@@ -4435,7 +4438,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -4499,7 +4502,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -4540,7 +4543,8 @@
                   ]
               },
               "delay": {
-                  "type": "number"
+                  "type": "number",
+                  "description": "delay in milliseconds (example: 3.5 seconds is 3500 in milliseconds)"
               }
 
           }
@@ -4581,7 +4585,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -4622,7 +4626,8 @@
                   ]
               },
               "delay": {
-                  "type": "number"
+                  "type": "number",
+                  "description": "delay in milliseconds (example: 3.5 seconds is 3500 in milliseconds)"
               }
 
           }
@@ -4663,7 +4668,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -4726,7 +4731,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -4785,7 +4790,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with precision higher than 1 second (example: 1483228800.537)"
+                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "remoteID": {
                   "type": "string",
@@ -4806,7 +4811,8 @@
                 "description": "disconnected"
               },
               "delay": {
-                  "type": "number"
+                  "type": "number",
+                  "description": "delay in milliseconds (example: 3.5 seconds is 3500 in milliseconds)"
               }
 
           }
