@@ -3519,7 +3519,6 @@
               "localID",
               "deviceID",
               "timestamp",
-              "remoteID",
               "feedback"
           ],
           "properties": {
@@ -3544,7 +3543,7 @@
               "remoteID": {
                   "type": "string",
                   "maxLength": 128,
-                  "description": "It is provided by the developer and MUST NOT be null or empty."
+                  "description": "It is provided by the developer. Non-empty remoteID means that the feedback was given explicitly about the connection between these two parties. Otherwise it is regarded as general conference feedback."
               },
               "feedback": {
                   "type": "object",
