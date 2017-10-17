@@ -2995,7 +2995,8 @@
               },
               "appVersion": {
                   "type": "string",
-                  "description":"Version of your application "
+                  "maxLength": 30,
+                  "description":"Version of your application. Truncated to max 30 characters."
               }
           }
       },
