@@ -3703,9 +3703,7 @@
               "timestamp",
               "eventType",
               "remoteID",
-              "connectionID",
-              "fabricTransmissionDirection",
-              "remoteEndpointType"
+              "connectionID"
           ],
           "properties": {
               "localID": {
@@ -3750,12 +3748,16 @@
               },
               "fabricTransmissionDirection": {
                   "type": "string",
+                  "description": "Stream flow direction inside the fabric. Default is \"sendrecv\".",
+                  "default": "sendrecv",
                   "enum": [
                       "sendonly", "receiveonly", "sendrecv"
                   ]
               },
               "remoteEndpointType": {
                   "type": "string",
+                  "description": "Type of remote endpoint a fabric was established to. Default is \"peer\".",
+                  "default": "peer",
                   "enum": [
                       "peer", "server"
                   ]
@@ -3891,6 +3893,22 @@
               "timestamp": {
                   "type": "number",
                   "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+              },
+              "fabricTransmissionDirection": {
+                  "type": "string",
+                  "description": "Stream flow direction inside the fabric. Default is \"sendrecv\".",
+                  "default": "sendrecv",
+                  "enum": [
+                      "sendonly", "receiveonly", "sendrecv"
+                  ]
+              },
+              "remoteEndpointType": {
+                  "type": "string",
+                  "description": "Type of remote endpoint fabric failed to be established to. Default is \"peer\".",
+                  "default": "peer",
+                  "enum": [
+                      "peer", "server"
+                  ]
               },
               "reason": {
                   "type": "string",
