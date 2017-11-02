@@ -4113,7 +4113,7 @@
                   "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "ssrc": {
-                  "type": "integer",
+                  "type": "string",
                   "description" : "Stringified integer of SSRC ID"
               },
               "mediaDeviceID": {
@@ -4165,7 +4165,7 @@
                   "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
               },
               "ssrc": {
-                  "type": "integer",
+                  "type": "string",
                   "description" : "Stringified integer of SSRC ID (SSRC is not required for the event: oneWayMedia)"
               }
             }
