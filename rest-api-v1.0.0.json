@@ -15,11 +15,14 @@
         Throughout the duration of the call the WebRTC endpoint is obligated to send userAlive event in every 10 seconds. For initiating the call the endpoint requires to send fabricSetup event.\n
         <img src='images/step2-MessageFlowRESTAPI.png' />\n
         ## Step 3\n
-        WebRTC endpoint can now send stats to REST API regularly and  all the stats messages are acknowledged.\n
+        Whenever new media track appears, for example a new participant joins or a new media source is added, the SSRC map event should be sent. Newly added SSRC should be appended to the SSRC map rather than replacing the old SSRC\n
         <img src='images/step3-MessageFlowRESTAPI.png' />\n
         ## Step 4\n
-        The WebRTC endpoint informs the REST API about the end of the call by sending fabricTermination event. After the event is acknowledged, the endpoint sends the userLeft event, which removes the user from the conference. Once the last participant sends the userLeft event,  the conference is terminated.\n
+        WebRTC endpoint can now send stats to REST API regularly and  all the stats messages are acknowledged.\n
         <img src='images/step4-MessageFlowRESTAPI.png' />\n
+        ## Step 5\n
+        The WebRTC endpoint informs the REST API about the end of the call by sending fabricTermination event. After the event is acknowledged, the endpoint sends the userLeft event, which removes the user from the conference. Once the last participant sends the userLeft event,  the conference is terminated.\n
+        <img src='images/step5-MessageFlowRESTAPI.png' />\n
 
         ",
         "version": "1.0.0"
@@ -2447,7 +2450,7 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/ssrcmap": {
             "post": {
                 "summary": "SSRC map event",
-                "description": "Whenever new media track appears, for example a new participant joins or new media sources are added, this event should be notified. \n",
+                "description": "Whenever new media track appears, for example a new participant joins or a new media source is added, the SSRC Map event should be sent. Newly added SSRC should be appended as an Array item rather than replacing the old SSRC\n",
                 "parameters": [
                     {
                         "name": "token",
