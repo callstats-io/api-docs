@@ -2955,7 +2955,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "endpointInfo": {
                   "$ref": "#/definitions/endpointInfo"
@@ -3024,7 +3024,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               }
           }
       },
@@ -3054,7 +3054,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "userName": {
                   "type": "string",
@@ -3092,7 +3092,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "connectionID": {
                   "type": "string",
@@ -3141,7 +3141,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -3205,7 +3205,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "connectionID": {
                   "type": "string",
@@ -3256,7 +3256,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -3325,7 +3325,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "connectionID": {
                   "type": "string",
@@ -3483,7 +3483,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -3539,7 +3539,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -3596,7 +3596,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               }
           }
       },
@@ -3631,7 +3631,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -3671,7 +3671,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "cpuUsage": {
                   "type": "number",
@@ -3724,7 +3724,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -3890,7 +3890,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "reason": {
                   "type": "string",
@@ -3947,7 +3947,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -3986,7 +3986,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "cpuUsage": {
                   "type": "number",
@@ -4092,7 +4092,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "mediaDeviceID": {
                   "type": "string",
@@ -4140,7 +4140,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "ssrc": {
                   "type": "integer",
@@ -4181,7 +4181,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -4221,7 +4221,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "mediaDeviceList": {
                   "type": "array",
@@ -4303,7 +4303,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -4369,7 +4369,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -4438,7 +4438,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -4502,7 +4502,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -4585,7 +4585,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -4668,7 +4668,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -4731,7 +4731,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
@@ -4790,7 +4790,7 @@
               },
               "timestamp": {
                   "type": "number",
-                  "description":"Unix timestamp with a precision of milliseconds (example:  1483228800537.518)"
+                  "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
               "remoteID": {
                   "type": "string",
