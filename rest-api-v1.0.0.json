@@ -3710,7 +3710,10 @@
               "timestamp",
               "eventType",
               "remoteID",
-              "connectionID"
+              "connectionID",
+              "localIceCandidates",
+              "remoteIceCandidates",
+              "iceCandidatePairs"
           ],
           "properties": {
               "localID": {
