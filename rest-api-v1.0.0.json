@@ -4090,10 +4090,7 @@
               "eventType",
               "localID",
               "deviceID",
-              "timestamp",
-              "mediaDeviceID",
-              "remoteIDList"
-
+              "timestamp"
           ],
           "properties": {
             "eventType": {
