@@ -3002,8 +3002,8 @@
               },
               "appVersion": {
                   "type": "string",
-                  "maxLength": 30,
-                  "description":"Version of your application. Truncated to max 30 characters."
+                  "maxLength": 32,
+                  "description":"Version of your application. Truncated to max 32 characters."
               }
           }
       },
@@ -4170,6 +4170,11 @@
               "timestamp": {
                   "type": "number",
                   "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
+              },
+              "mediaType": {
+                  "type": "string",
+                  "enum": ["audio", "video", "screen"],
+                  "description": "Type of media"
               },
               "ssrc": {
                   "type": "string",
