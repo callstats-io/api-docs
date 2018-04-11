@@ -4091,6 +4091,8 @@
               "localID",
               "deviceID",
               "timestamp",
+              "remoteID",
+              "connectionID",
               "mediaDeviceID",
               "remoteIDList"
 
@@ -4118,6 +4120,15 @@
               "timestamp": {
                   "type": "number",
                   "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
+              },
+              "remoteID": {
+                  "type": "string",
+                  "maxLength": 128,
+                  "description": "It is provided by the developer and MUST NOT be null or empty."
+              },
+              "connectionID": {
+                  "type": "string",
+                  "description":"Unique identifier (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol) of connection between two endpoints. This identifier should remain the same throughout the life-time of the connection. "
               },
               "ssrc": {
                   "type": "string",
