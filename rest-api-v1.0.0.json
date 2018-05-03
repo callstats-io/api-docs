@@ -4,7 +4,7 @@
         "title": "callstats REST API",
         "description": "
         Monitor any real-time app with the callstats API. \n
-        <b> We support only HTTP 2.1 enabled client endpoints</b>\n
+        <b> We support only HTTP 2.2 enabled client endpoints</b>\n
         # Steps to integrate\n
         All the messages between the WebRTC endpoint and the REST API during the call are shown in the following figures, represented as sequence diagrams.\n
         ## Step 1\n
