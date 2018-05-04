@@ -4,7 +4,7 @@
         "title": "callstats REST API",
         "description": "
         Monitor any real-time app with the callstats API. \n
-        <b> We support only HTTP 2.2 enabled client endpoints</b>\n
+        <b> We support only HTTP 2.1 enabled client endpoints</b>\n
         # Steps to integrate\n
         All the messages between the WebRTC endpoint and the REST API during the call are shown in the following figures, represented as sequence diagrams.\n
         ## Step 1\n
@@ -61,7 +61,7 @@
                         "name": "code",
                         "required": true,
                         "in": "formData",
-                        "description": "JWT signed ApplicationToken with alg set to ES256",
+                        "description": "JWT signed ApplicationToken with alg set to ES256 (For more information about JWT refer to https://www.callstats.io/2016/09/29/3rd-party-auth-jwt-tokens/)",
                         "type": "string"
                     },
                     {
