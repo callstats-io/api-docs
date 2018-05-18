@@ -4003,7 +4003,7 @@
                   "type": "number",
                   "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
               },
-              "cpuUsage": {
+              "cpuLevel": {
                   "type": "number",
                   "description" : "CPU level in percentage"
               },
@@ -4015,7 +4015,7 @@
                   "type": "number",
                   "description" : "Memory usage in MB"
               },
-              "totalMemory": {
+              "memoryAvailable": {
                   "type": "number",
                   "description" : "Total memory in MB"
               },
