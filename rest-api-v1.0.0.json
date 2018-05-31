@@ -3868,9 +3868,7 @@
               "localID",
               "deviceID",
               "timestamp",
-              "reason",
-              "name",
-              "message"
+              "reason"
           ],
           "properties": {
               "localID": {
