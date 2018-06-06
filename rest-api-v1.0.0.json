@@ -3262,6 +3262,18 @@
                   "type": "string",
                   "description":"Unique identifier (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol) of connection between two endpoints. This identifier should remain the same throughout the life-time of the connection. "
               },
+              "localIceCandidates": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/iceCandidatesLocal"
+                  }
+              },
+              "remoteIceCandidates": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/iceCandidatesRemote"
+                  }
+              },
               "currIceCandidatePair": {
                   "$ref": "#/definitions/iceCandidatesObj"
               },
