@@ -8,7 +8,7 @@
         # Steps to integrate\n
         All the messages between the WebRTC endpoint and the REST API during the call are shown in the following figures, represented as sequence diagrams.\n
         ## Step 0\n
-        Before the webRTC endpoint initiates authentication proccedure with callstats.io infrastructure, it must obtain a signed token provided by it's own Authentication API. Please refer to Step 1 and Step 2 within this [document](https:/\/help.callstats.io/hc/en-us/articles/360002330774-REST-API-Authentication).\n
+        Before the webRTC endpoint initiates authentication procedure with callstats.io infrastructure, it must obtain a signed token provided by it's own Authentication API. Please refer to Step 1 and Step 2 within this [document](https:/\/help.callstats.io/hc/en-us/articles/360002330774-REST-API-Authentication).\n
         ## Step 1\n
         At the beginning of the call, the service needs to be authenticated. When the authentication succeeds, a 'token' is sent back to the WebRTC endpoint. The received 'token' is then used for sending events and stats.\n
         <img src='images/step1-MessageFlowRESTAPI.png' />\n
@@ -3261,6 +3261,18 @@
               "connectionID": {
                   "type": "string",
                   "description":"Unique identifier (example: Hash of Source IP||Source Port||Destination IP||Destination Port||Transport Protocol) of connection between two endpoints. This identifier should remain the same throughout the life-time of the connection. "
+              },
+              "localIceCandidates": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/iceCandidatesLocal"
+                  }
+              },
+              "remoteIceCandidates": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/iceCandidatesRemote"
+                  }
               },
               "currIceCandidatePair": {
                   "$ref": "#/definitions/iceCandidatesObj"
