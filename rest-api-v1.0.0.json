@@ -3,6 +3,8 @@
     "info": {
         "title": "callstats REST API",
         "description": "
+        You can generate REST API clients using [swagger.io](https:/\/editor.swagger.io). 
+        \n
         Monitor any real-time app with the callstats API. \n
         <b> We support only HTTP 2.0 enabled client endpoints</b>\n
         # Steps to integrate\n
