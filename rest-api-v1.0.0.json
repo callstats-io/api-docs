@@ -3794,8 +3794,7 @@
               "selectedCandidatePairID": {
                   "type": "string",
                   "description": "ID of the selected candidate pair"
-              },
-
+              }
           }
       },
       "iceCandidatesLocal": {
