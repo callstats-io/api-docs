@@ -104,7 +104,7 @@
         "/v1/apps/{appID}/conferences/{confID}": {
             "post": {
                 "summary": "User joined / Create conference event",
-                "description": "<b>HOSTNAME: events.callstats.io</b><br />This is the first step to add a new participant to the list of conference participants or start a new conference. If there are no participants in the given conference then a new conference will be created with the conferenceID provided.",
+                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />This is the first step to add a new participant to the list of conference participants or start a new conference. If there are no participants in the given conference then a new conference will be created with the conferenceID provided.<br />,<b>NOTE:</b>Hostname comes from 'events' parameter of the 'Authentication' response.",
                 "consumes": [
                     "application/json"
                 ],
