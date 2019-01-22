@@ -104,7 +104,7 @@
         "/{appID}/conferences/{confID}": {
             "post": {
                 "summary": "User joined / Create conference event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />This is the first step to add a new participant to the list of conference participants or start a new conference. If there are no participants in the given conference then a new conference will be created with the conferenceID provided.<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />This is the first step to add a new participant to the list of conference participants or start a new conference. If there are no participants in the given conference then a new conference will be created with the conferenceID provided.",
                 "consumes": [
                     "application/json"
                 ],
@@ -187,7 +187,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/user/alive": {
             "post": {
                 "summary": "User alive event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />UserAlive makes sure that the user is present in the conference\n. We recommend you send this event every 10 seconds.\n If there is no userAlive event from a particular user for more than 30 seconds, we assume that the user has left the conference.<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />UserAlive makes sure that the user is present in the conference\n. We recommend you send this event every 10 seconds.\n If there is no userAlive event from a particular user for more than 30 seconds, we assume that the user has left the conference.",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -274,7 +274,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/userdetails": {
             "post": {
                 "summary": "User details event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br /> You can submit the user details such as username using this event.<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br /> You can submit the user details such as username using this event.",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -361,7 +361,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/user/left": {
             "post": {
                 "summary": "User left event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />User left event should be sent when a user leaves the conference.\nThis event removes the user from the list of conference participants.\nThe conference will be closed when all the users have left or timed out.<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />User left event should be sent when a user leaves the conference.\nThis event removes the user from the list of conference participants.\nThe conference will be closed when all the users have left or timed out.",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -448,7 +448,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/fabric/setup": {
             "post": {
                 "summary": "Fabric setup event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />These are connection related events, it should be sent during initial fabric setup phase. After this connection is setup and you can send data) \n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />These are connection related events, it should be sent during initial fabric setup phase. After this connection is setup and you can send data) \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -535,7 +535,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/fabric/setupfailed": {
             "post": {
                 "summary": "Fabric setup failed event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />These are connection related events, it should be sent when fabric setup fails. This means connection has failed and you cannot send data)\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />These are connection related events, it should be sent when fabric setup fails. This means connection has failed and you cannot send data)\n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -623,7 +623,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/fabric/terminated": {
             "post": {
                 "summary": "Fabric terminated event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />These are connection related events, it should be sent when fabric is terminated. This means connection has ended and you cannot send data)\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />These are connection related events, it should be sent when fabric is terminated. This means connection has ended and you cannot send data)\n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -710,7 +710,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/fabric/statechange": {
             "post": {
                 "summary": "Fabric state change event",
-                "description": "Whenever the ICE connection state changes or ICE gathering state changes or signaling state changes then this event should be sent.\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "Whenever the ICE connection state changes or ICE gathering state changes or signaling state changes then this event should be sent.\n",
                 "parameters": [
                     {
                         "name": "token",
@@ -798,7 +798,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/fabric/transportchange": {
             "post": {
                 "summary": "Fabric transport change event",
-                "description": "Whenever the fabric transport changes this event should be called.\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "Whenever the fabric transport changes this event should be called.\n",
                 "parameters": [
                     {
                         "name": "token",
@@ -886,7 +886,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/fabric/status": {
             "post": {
                 "summary": "Fabric dropped event",
-                "description": "Whenever the fabric is dropped, this should be notified.\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "Whenever the fabric is dropped, this should be notified.\n",
                 "parameters": [
                     {
                         "name": "token",
@@ -974,7 +974,7 @@
         "/v1/apps/{appID}/conferences/{confID}/{ucID}/events/fabric/actions": {
             "post": {
                 "summary": "Fabric action event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br /> When the fabric hold or resume events happen, this event can be submitted\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br /> When the fabric hold or resume events happen, this event can be submitted\n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1061,7 +1061,7 @@
         "/{appID}/conferences/{confID}/{ucID}/stats": {
             "post": {
                 "summary": "Conference stats submission",
-                "description": "<b>HOSTNAME: https://stats.callstats.io/v1/apps</b><br />All the conference stats inlcuding tracks, candidatePairs,trasnports, msts, dataChannels, codes and timestamps can be submitted using this event. For the time being tracks, candidatePairs and timestamp are mandatory fields. \n<br /><b>NOTE:</b> Hostname comes from ‘stats’ parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from ‘stats’ parameter of the 'Authentication' response.</b><br />All the conference stats inlcuding tracks, candidatePairs,trasnports, msts, dataChannels, codes and timestamps can be submitted using this event. For the time being tracks, candidatePairs and timestamp are mandatory fields. \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1148,7 +1148,7 @@
         "/{appID}/stats/system": {
             "post": {
                 "summary": "System status stats submission",
-                "description": "<b>HOSTNAME: https://stats.callstats.io/v1/apps</b><br />Submitting System status information for a conference such as battery level, cpu , etc.\n<br /><b>NOTE:</b> Hostname comes from ‘stats’ parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from ‘stats’ parameter of the 'Authentication' response.</b><br />Submitting System status information for a conference such as battery level, cpu , etc.\n",
                 "parameters": [
                     {
                         "name": "token",
@@ -1221,7 +1221,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/ice/status": {
             "post": {
                 "summary": "ICE disruption start event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />\n When ICE disruption starts, this event should be submitted \n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />\n When ICE disruption starts, this event should be submitted \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1308,7 +1308,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/ice/status ": {
             "post": {
                 "summary": "ICE disruption end event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />\n When ICE disruption ends, this event should be submitted \n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />\n When ICE disruption ends, this event should be submitted \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1395,7 +1395,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/ice/status  ": {
             "post": {
                 "summary": "ICE restart event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />\n When ICE restarts, this event should be submitted \n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />\n When ICE restarts, this event should be submitted \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1482,7 +1482,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/ice/status   ": {
             "post": {
                 "summary": "ICE failed event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />\n When ICE fails, this event should be submitted \n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />\n When ICE fails, this event should be submitted \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1569,7 +1569,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/ice/status    ": {
             "post": {
                 "summary": "ICE Aborted event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />\n When ICE Aborts, this event should be submitted \n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />\n When ICE Aborts, this event should be submitted \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1656,7 +1656,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/ice/status     ": {
             "post": {
                 "summary": "ICE Terminated event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />\n When ICE Terminates, this event should be submitted \n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />\n When ICE Terminates, this event should be submitted \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1743,7 +1743,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/ice/status      ": {
             "post": {
                 "summary": "ICE connection disruption start event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />\n When ICE connection disruption starts, this event should be submitted \n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />\n When ICE connection disruption starts, this event should be submitted \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1830,7 +1830,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/ice/status       ": {
             "post": {
                 "summary": "ICE connection disruption end event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />\n When ICE connection disrutption ends, this event should be submitted \n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />\n When ICE connection disrutption ends, this event should be submitted \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -1917,7 +1917,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/media/actions": {
             "post": {
                 "summary": "Media action events",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br /> When a participant mutes/unmute the audio, pauses/resumes the video, or starts/stops screensharing, this event can be submitted\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br /> When a participant mutes/unmute the audio, pauses/resumes the video, or starts/stops screensharing, this event can be submitted\n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -2004,7 +2004,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/media/pipeline": {
             "post": {
                 "summary": "Media playback event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br /> When the media playback starts, suspended or stalls, this event can be submitted\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br /> When the media playback starts, suspended or stalls, this event can be submitted\n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -2091,7 +2091,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/devices/list": {
             "post": {
                 "summary": "Connected/Active devices event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />Information about the connected and/or active media devices.\nAvailable eventTypes are given below:\n   - connectedDeviceList (All the media devices connected to the endpoint) \n   - activeDeviceList (Active media devices used by the endpoint) \n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />Information about the connected and/or active media devices.\nAvailable eventTypes are given below:\n   - connectedDeviceList (All the media devices connected to the endpoint) \n   - activeDeviceList (Active media devices used by the endpoint) \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -2178,7 +2178,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/app/logs": {
             "post": {
                 "summary": "Application error logs event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br /> You can submit application error logs using this event. You will be able to search for them and also categorize them.<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br /> You can submit application error logs using this event. You will be able to search for them and also categorize them.",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -2265,7 +2265,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/feedback": {
             "post": {
                 "summary": "Conference user feedback event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />You can submit overall rating to conference and add comments as well. It is also possible to give separate ratings for audio and video.\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />You can submit overall rating to conference and add comments as well. It is also possible to give separate ratings for audio and video.\n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -2352,7 +2352,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/dominantspeaker": {
             "post": {
                 "summary": "Dominant speaker event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />Using this event, you can specify the dominant speaker of the conference. For reference you can check this link: http://www.sciencedirect.com/science/article/pii/S0885230812000186 \n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />Using this event, you can specify the dominant speaker of the conference. For reference you can check this link: http://www.sciencedirect.com/science/article/pii/S0885230812000186 \n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -2443,7 +2443,7 @@
                 For e.g.\n
                 oldSsrcMap = [{ mst1 }];\n
                 newSsrcMap = [{ mst1 }, { mst2 }];\n
-                sendSsrcMapEvent(newSsrcMap);\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                sendSsrcMapEvent(newSsrcMap);\n",
                 "parameters": [
                     {
                         "name": "token",
@@ -2531,7 +2531,7 @@
         "/{appID}/conferences/{confID}/{ucID}/events/sdp": {
             "post": {
                 "summary": "SDP event",
-                "description": "PRO feature: Whenever there is an updated SDP or a pair of local and remote SDPs, this can be sent to callstats.io.\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "PRO feature: Whenever there is an updated SDP or a pair of local and remote SDPs, this can be sent to callstats.io.\n",
                 "parameters": [
                     {
                         "name": "token",
@@ -2619,7 +2619,7 @@
         "/{appID}/stats/bridge/status": {
             "post": {
                 "summary": "Bridge statistics event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />All the bridge statistics can be sent using this event\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />All the bridge statistics can be sent using this event\n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -2691,7 +2691,7 @@
         "/{appID}/stats/bridge/alive": {
             "post": {
                 "summary": "Bridge alive event",
-                "description": "<b>HOSTNAME: https://events.callstats.io/v1/apps</b><br />All the bridges should send a keep alive message every 30 seconds\n<br /><b>NOTE:</b> Hostname comes from 'events' parameter of the 'Authentication' response.",
+                "description": "<b>HOSTNAME: Hostname comes from 'events' parameter of the 'Authentication' response.</b><br />All the bridges should send a keep alive message every 30 seconds\n",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -2787,19 +2787,19 @@
                         "properties":{
                             "config":{
                                 "type":"string",
-                                "example":"https://appsettings.callstats.io/v1/apps"
+                                "example":"URL"
                             },
                             "stats":{
                                 "type":"string",
-                                "example":"https://stats.callstats.io/v1/apps"
+                                "example":"URL"
                             },
                             "events":{
                                 "type":"string",
-                                "example":"https://events.callstats.io/v1/apps"
+                                "example":"URL"
                             },
                             "conferenceBase":{
                                 "type":"string",
-                                "example":"https://dashboard.callstats.io/apps"
+                                "example":"URL"
                             }
                         }
                     }
