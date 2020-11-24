@@ -2959,7 +2959,8 @@
               "localID",
               "deviceID",
               "timestamp",
-              "endpointInfo"
+              "endpointInfo",
+              "applicationIDs"
           ],
           "properties": {
               "localID": {
@@ -2982,8 +2983,49 @@
               },
               "endpointInfo": {
                   "$ref": "#/definitions/endpointInfo"
+              },
+              "applicationIDs": {
+                "$ref": "#/definitions/applicationIDs"
               }
           }
+      },
+      "applicationIDs": {
+        "type": "object",
+        "required": [],
+        "properties": {
+            "customerID": {
+                "type": "string",
+                "description":"Customer Identifier"
+            },
+            "tenantID": {
+                "type": "string",
+                "description":"Tenant Identifier"
+            },
+            "productName": {
+                "type": "string",
+                "description":"Product Name"
+            },
+            "meetingsName": {
+                "type": "string",
+                "description":"Meeting Name"
+            },
+            "serverName": {
+                "type": "string",
+                "description":"Server/MiddleBox Name"
+            },
+            "pbxID": {
+                "type": "string",
+                "description":"PBX Identifier"
+            },
+            "pbxExtensionID": {
+                "type": "string",
+                "description":"PBX Extension Identifier"
+            },
+            "fqExtensionID": {
+                "type": "string",
+                "description":"Fully qualified Extension Identifier"
+            }
+         }
       },
       "endpointInfo": {
           "type": "object",
