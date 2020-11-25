@@ -2960,7 +2960,7 @@
               "deviceID",
               "timestamp",
               "endpointInfo",
-              "applicationIDs"
+              "additionalIDs"
           ],
           "properties": {
               "localID": {
@@ -2984,12 +2984,12 @@
               "endpointInfo": {
                   "$ref": "#/definitions/endpointInfo"
               },
-              "applicationIDs": {
-                "$ref": "#/definitions/applicationIDs"
+              "additionalIDs": {
+                "$ref": "#/definitions/additionalIDs"
               }
           }
       },
-      "applicationIDs": {
+      "additionalIDs": {
         "type": "object",
         "required": [],
         "properties": {
