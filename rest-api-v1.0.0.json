@@ -2959,7 +2959,8 @@
               "localID",
               "deviceID",
               "timestamp",
-              "endpointInfo"
+              "endpointInfo",
+              "additionalIDs"
           ],
           "properties": {
               "localID": {
@@ -2982,8 +2983,49 @@
               },
               "endpointInfo": {
                   "$ref": "#/definitions/endpointInfo"
+              },
+              "additionalIDs": {
+                "$ref": "#/definitions/additionalIDs"
               }
           }
+      },
+      "additionalIDs": {
+        "type": "object",
+        "required": [],
+        "properties": {
+            "customerID": {
+                "type": "string",
+                "description":"Customer Identifier. Example, walmart."
+            },
+            "tenantID": {
+                "type": "string",
+                "description":"Tenant Identifier. Example, monster."
+            },
+            "productName": {
+                "type": "string",
+                "description":"Product Name. Example, Jitsi."
+            },
+            "meetingsName": {
+                "type": "string",
+                "description":"Meeting Name. Example, Jitsi loves callstats."
+            },
+            "serverName": {
+                "type": "string",
+                "description":"Server/MiddleBox Name. Example, jvb-prod-us-east-mlkncws12."
+            },
+            "pbxID": {
+                "type": "string",
+                "description":"PBX Identifier. Example, walmart."
+            },
+            "pbxExtensionID": {
+                "type": "string",
+                "description":"PBX Extension Identifier. Example, 5625.  "
+            },
+            "fqExtensionID": {
+                "type": "string",
+                "description":"Fully qualified Extension Identifier. Example, +71 (US) +5625."
+            }
+         }
       },
       "endpointInfo": {
           "type": "object",
