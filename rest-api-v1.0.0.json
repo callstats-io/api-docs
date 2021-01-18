@@ -3024,6 +3024,10 @@
             "fqExtensionID": {
                 "type": "string",
                 "description":"Fully qualified Extension Identifier. Example, +71 (US) +5625."
+            },
+            "sessionID": {
+                "type": "string",
+                "description":"Session Identifier. Example, session-12-34-45"
             }
          }
       },
