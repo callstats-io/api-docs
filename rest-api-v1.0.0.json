@@ -2991,7 +2991,6 @@
       },
       "additionalIDs": {
         "type": "object",
-        "required": [],
         "properties": {
             "customerID": {
                 "type": "string",
@@ -3782,7 +3781,6 @@
               "localID",
               "deviceID",
               "timestamp",
-              "eventType",
               "remoteID",
               "connectionID",
               "localIceCandidates",
