@@ -2977,6 +2977,16 @@
                   "type": "string",
                   "description": "Unique string persistent over device lifetime (e.g. Hash of android.provider.Settings.Secure.ANDROID_ID)"
               },
+              "userName": {
+                "type": "string",
+                "maxLength": 128,
+                "description": "The name of the user."
+              },
+              "loginID": {
+                "type": "string",
+                "maxLength": 128,
+                "description": "The login identifier of the user."
+              },
               "timestamp": {
                   "type": "number",
                   "description":"Timestamp in milliseconds since 01 January, 1970 UTC (example: 1483228800537)"
@@ -3129,7 +3139,6 @@
                   "type": "string",
                   "maxLength": 128,
                   "description": "The name of the user."
-
               },
           }
       },
