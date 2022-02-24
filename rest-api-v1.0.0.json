@@ -37,7 +37,12 @@
     ],
     "produces": [
         "application/json"
-    ],
+    ]        ,
+    "x-readme": {
+        "explorer-enabled": true,
+        "proxy-enabled": true,
+        "samples-enabled": true
+    },
     "paths": {
         "/authenticate": {
             "post": {
